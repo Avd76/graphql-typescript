@@ -1,10 +1,11 @@
 import {GraphQLObjectType, GraphQLSchema} from 'graphql'
-import { getAllTodos } from './Queries'
-import { createTodo } from './Mutations'
+import { getAllTodos, getAllUsers } from './Queries'
+import { createTodo, deleteTodo, updateTodo, register } from './Mutations'
 const rootQuery = new GraphQLObjectType({
     name: 'rootQuery',
     fields: {
-        getAllTodos
+        getAllTodos,
+        getAllUsers
     }
 
 
@@ -13,7 +14,10 @@ const rootQuery = new GraphQLObjectType({
 const rootMutation = new GraphQLObjectType({
     name: 'rootMutation',
     fields: {
-        createTodo
+        createTodo,
+         deleteTodo,
+         updateTodo,
+         register
     }
 })
 
